@@ -23,54 +23,58 @@ class PageDrawer extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(10),
-            child: Row(
-              children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'images/page.png',
+            child: RaisedButton(
+              child: Row(
+                children: [
+                  Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          'images/page.png',
+                        ),
                       ),
                     ),
                   ),
-                ),
-                RaisedButton(
-                  child: Text(
+                  Text(
                     'Page 1',
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Page1()));
-                  },
-                )
-              ],
+                ],
+              ),
+              color: Colors.white,
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page1()));
+              },
             ),
           ),
-          RaisedButton.icon(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Page2()));
-            },
-            icon: Icon(
-              Icons.accessible,
-              size: 35,
+          Container(
+            width: 180,
+            height: 60 ,
+            child: RaisedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Page2()));
+              },
+              icon: Icon(
+                Icons.accessible,
+                size: 35,
+              ),
+              label: Text(
+                'Page 2',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+              color: Colors.white,
             ),
-            label: Text(
-              'Page 2',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-            color: Colors.white,
-          ),
+          )
         ],
       ),
     );
