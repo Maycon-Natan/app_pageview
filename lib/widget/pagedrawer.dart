@@ -1,3 +1,5 @@
+import 'package:app_pageview/pages/page1.dart';
+import 'package:app_pageview/pages/page2.dart';
 import 'package:flutter/material.dart';
 
 class PageDrawer extends StatelessWidget {
@@ -35,36 +37,39 @@ class PageDrawer extends StatelessWidget {
                   ),
                 ),
                 RaisedButton(
-                  onPressed: null,
                   child: Text(
                     'Page 1',
                     style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   color: Colors.white,
-                  disabledColor: Colors.red,
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Page1()));
+                  },
                 )
               ],
             ),
           ),
           RaisedButton.icon(
-            onPressed: null,
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Page2()));
+            },
             icon: Icon(
               Icons.accessible,
-              size: 30,
-              color: Colors.white,
+              size: 35,
             ),
             label: Text(
               'Page 2',
               style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                  color: Colors.black),
             ),
             color: Colors.white,
-            disabledColor: Colors.red,
           ),
         ],
       ),
